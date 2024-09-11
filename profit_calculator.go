@@ -18,10 +18,10 @@ func main() {
 	fmt.Scan(&taxRate)
 
 	earningsBeforeTax := revenue - expenses
-	earningsAfterTax := earningsBeforeTax * (1 - taxRate/100)
-	profitRatio := earningsAfterTax / revenue
+	profit := earningsBeforeTax * (1 - taxRate/100)
+	profitRatio := profit / revenue
 
 	fmt.Println("Earnings before tax: ", earningsBeforeTax)
-	fmt.Println("Earnings after tax: ", earningsAfterTax)
+	fmt.Println("Profit: ", profit)
 	fmt.Println("Profit ratio: ", math.Round(profitRatio*100), "%")
 }
