@@ -14,7 +14,7 @@ func main() {
 	expenses = getRequiredInput("Enter expenses: ")
 	taxRate = getRequiredInput("Enter tax rate: ")
 
-	ebt, profit, profitRatio := calculateEarnings(revenue, expenses, taxRate)
+	ebt, profit, profitRatio := calculateFinancials(revenue, expenses, taxRate)
 
 	fmt.Println("Earnings before tax: ", ebt)
 	fmt.Println("Profit: ", profit)
@@ -30,7 +30,7 @@ func getRequiredInput(text string) float64 {
 	return value
 }
 
-func calculateEarnings(revenue float64, expenses float64, taxRate float64) (ebt float64, profit float64, profitRatio float64) {
+func calculateFinancials(revenue, expenses, taxRate float64) (ebt, profit, profitRatio float64) {
 	ebt = revenue - expenses
 	profit = ebt * (1 - taxRate/100)
 	profitRatio = profit / revenue
