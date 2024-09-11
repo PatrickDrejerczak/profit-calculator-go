@@ -10,9 +10,9 @@ func main() {
 	var expenses float64
 	var taxRate float64
 
-	revenue = getRequiredInput("Enter revenue: ", revenue)
-	expenses = getRequiredInput("Enter expenses: ", expenses)
-	taxRate = getRequiredInput("Enter tax rate: ", taxRate)
+	revenue = getRequiredInput("Enter revenue: ")
+	expenses = getRequiredInput("Enter expenses: ")
+	taxRate = getRequiredInput("Enter tax rate: ")
 
 	ebt, profit, profitRatio := calculateEarnings(revenue, expenses, taxRate)
 
@@ -21,7 +21,9 @@ func main() {
 	fmt.Println("Profit ratio: ", math.Round(profitRatio*100), "%")
 }
 
-func getRequiredInput(text string, value float64) float64 {
+func getRequiredInput(text string) float64 {
+	var value float64
+
 	fmt.Print(text)
 	fmt.Scan(&value)
 
